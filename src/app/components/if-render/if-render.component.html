@@ -1,0 +1,23 @@
+<div class="class">
+  <!-- É melhor fazer essa verificação dentro da classe -->
+
+  <!-- Esse '*ngIf' recebe um condição para renderizar a tag ou não -->
+  <!-- Esse jeito já recebe um boolean -->
+  <div *ngIf="canShow">Estamos mostrando isso porque foi permitido</div>
+
+  <!-- Outro jeito é fazendo a condição aqui mesmo -->
+  <!-- Se for igual á 'Eduardo' então rederiza esse componente -->
+  <!-- Se não for igual então rederiza o componente chamado 'nameNotFound' -->
+  <h2 *ngIf="name === 'Eduardo'; else nameNotFound" >O nome é Eduardo</h2>
+
+  <!-- Esse é o componente que vai ser rederizado na quandição de cima -->
+  <!-- Dentro dele pode haver quanto html quiser -->
+  <ng-template #nameNotFound>
+
+    <div>
+      <h2>O nome não foi encontrado</h2>
+    </div>
+
+  </ng-template>
+
+</div>
