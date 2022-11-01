@@ -3,3 +3,8 @@
 <!-- Importação do componente vem sempre "app" na frente. -->
 <!-- Isso foi configurado nas configurações do componente. -->
 <app-first-component></app-first-component>
+
+<!-- Assim está compartilhando o userName que está no arquivo .ts desse componente principal -->
+<!-- Então é mandado para o componente 'parent-data' -->
+<!-- Ele pega o 'userName' criado nesse componente e manda como 'name' para o outro componente -->
+<app-parent-data [name]="userName" [userData]="userData"></app-parent-data>
