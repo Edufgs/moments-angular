@@ -1,0 +1,11 @@
+<div class="class">
+  <h2>Animais:</h2>
+  <!-- Imprime uma lista de animais de um vetor -->
+  <ul>
+      <!-- O for do angular funciona assim, cria uma variavel que vai receber cada item do vetor animals. -->
+      <li *ngFor="let animal of animals">
+        <!-- Assim é possivel imprimir cada item do for -->
+        Nome: {{animal.name}} - Tipo: {{animal.type}}
+      </li>
+  </ul>
+</div>
