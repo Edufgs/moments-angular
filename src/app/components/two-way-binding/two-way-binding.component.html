@@ -1,0 +1,20 @@
+<div class="class">
+  <h2>Two way data binging</h2>
+
+  <!-- Cria um formulário -->
+  <form>
+    <!-- Esse input está vinculado a variavel name da classe .ts -->
+    <!-- Esse é o jeito de vincular formulario -->
+    <input type="text" [(ngModel)]="name"
+    name="name"
+    placeholder="Digite seu nome"
+    />
+    <input type="submit" value="Enviar"/>
+  </form>
+
+  <br/>
+
+  <div *ngIf=" name !== '' ">
+    <p>O nome é: {{name}}</p>
+  </div>  
+</div>
