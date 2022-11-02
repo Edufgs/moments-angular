@@ -6,6 +6,8 @@
       <li *ngFor="let animal of animals">
         <!-- Assim é possivel imprimir cada item do for -->
         Nome: {{animal.name}} - Tipo: {{animal.type}}
+        <button (click)="showAge(animal)">Show age</button>        
       </li>
   </ul>
+  <h3>{{animalDetails}}</h3>
 </div>
