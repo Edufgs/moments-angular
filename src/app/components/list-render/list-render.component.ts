@@ -12,19 +12,16 @@ import { ListService } from 'src/app/services/list.service';
 })
 export class ListRenderComponent implements OnInit {
   //Foi adicionado a interface
-  animals: Animal[] = [
-    {name: "Turca", type: "Dog", age: 4},
-    {name: "Tom", type: "Cat", age: 10},
-    {name: "Frida", type: "Dog", age: 5},
-    {name: "Bob", type: "horse", age: 8},
-  ]
+  animals: Animal[] = []
 
   animalDetails = ''
   
   constructor(
     //Inicia o service igual no "Nestjs"
     private listService: ListService
-  ){}
+  ){
+    this.getAnimals()
+  }
 
   ngOnInit(): void {
   }
@@ -36,5 +33,10 @@ export class ListRenderComponent implements OnInit {
   removeAnimal(animal: Animal){
     this.animals =  this.listService.remove(this.animals, animal)
   }
-
+  
+  getAnimals(): void{
+    //.subscribe diz sobre o observable que o evento foi concretizado
+    //Nesse mesmo subscribe já guarda na variavel
+    this.listService.getAll().subscribe((animals) => (this.animals = animals));
+  }
 }
